@@ -8,6 +8,17 @@ function TreeNode(val) {
     this.left = this.right = null;
 }
 
+// Method: Recursion
+var maxDepth = function(root) {
+    // empty tree
+    if (!root) return 0;
+
+    // use recursion to find the depths of the left and right branches
+    // depth starts at 1
+    return Math.max(maxDepth(root.right) + 1, maxDepth(root.left) + 1);
+};
+
+// Method: Iteration
 var maxDepth = function(root) {
     const stack = [];
     let depth = 0;
