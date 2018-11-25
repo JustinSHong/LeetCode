@@ -7,6 +7,17 @@
 // Because nums[0] + nums[1] = 2 + 7 = 9,
 // return [0, 1].
 
+// Method: Brute Force
+var twoSum = function(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 0; j < nums.length; j++) {
+            if (i == j) continue;
+            else if (nums[i] + nums[j] == target) return [i, j];
+        }
+    }
+};
+
+// Method: Use a hash
 var twoSum = function(nums, target) {
     const hash = {};
     // populate hash
